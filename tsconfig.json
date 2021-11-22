@@ -1,0 +1,22 @@
+{
+  "include": ["src", "types"],
+  "compilerOptions": {
+    "module": "ESNext",
+    "lib": ["esnext"],
+    "rootDir": "./src",
+    "sourceMap": true,
+    "noEmit": true,
+    "importHelpers": true,
+    "declaration": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "moduleResolution": "node",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
