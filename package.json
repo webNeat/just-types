@@ -3,9 +3,13 @@
   "author": "Amine Ben hammou",
   "description": "A collection of handy Typescript types.",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist/index.d.ts",
+    "dist/index.d.ts.map"
+  ],
   "engines": {
     "node": ">=10"
   },
