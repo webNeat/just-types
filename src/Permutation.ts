@@ -9,7 +9,7 @@ type InsertAnywhere<
   ? InsertAt<Item, Counter['length'], List>
   : InsertAt<Item, Counter['length'], List> | InsertAnywhere<Item, List, [1, ...Counter]>
 
-export type Permutation<Values extends any[]> = Values extends [infer Value, ...infer Rest]
+export type Permutation<Values extends readonly any[]> = Values extends [infer Value, ...infer Rest]
   ? InsertAnywhere<Value, Permutation<Rest>>
   : []
 
