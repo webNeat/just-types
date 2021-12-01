@@ -1,6 +1,6 @@
 import {Equal, Is} from './Is'
 
-export type Flatten<List extends readonly any[][]> = List extends [infer First, ...infer Rest]
+export type Flatten<List extends any[][]> = List extends [infer First, ...infer Rest]
   ? // @ts-expect-error `First` and `Rest` are not inferred correctly
     [...First, ...Flatten<Rest>]
   : []

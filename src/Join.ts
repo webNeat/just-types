@@ -1,7 +1,7 @@
 import {Equal, Is} from './Is'
 import {Literal} from './Literal'
 
-export type Join<List extends readonly Literal[], Separator extends Literal> = List extends []
+export type Join<List extends Literal[], Separator extends Literal> = List extends []
   ? ''
   : List extends [Literal]
   ? `${List[0]}`

@@ -1,6 +1,6 @@
 import {Equal, Is} from './Is'
 
-export type Tail<List extends readonly any[]> = List extends [infer _, ...infer Rest] ? Rest : []
+export type Tail<List extends any[]> = List extends [infer _, ...infer Rest] ? Rest : []
 
 type Tests = [
   Is<Equal<Tail<[]>, []>>,

@@ -1,6 +1,6 @@
 import {Equal, Is} from './Is'
 
-export type SubArray<List extends readonly any[], ItemsBefore extends any[] = []> = List extends [
+export type SubArray<List extends any[], ItemsBefore extends any[] = []> = List extends [
   infer Item,
   ...infer Rest
 ]
