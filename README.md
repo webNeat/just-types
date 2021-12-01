@@ -13,6 +13,7 @@ A collection of handy Typescript types.
   - [Flatten](#flatten)
   - [InsertAt](#insertat)
   - [Join](#join)
+  - [MutableTuple](#mutabletuple)
   - [Permutation](#permutation)
   - [Range](#range)
   - [SubArray](#subarray)
@@ -39,47 +40,54 @@ yarn add --dev just-types
 
 ## Flatten
 ```ts
-  Flatten<[]> // => []
-  Flatten<[[1]]> // => [1]
-  Flatten<[[1], [2]]> // => [1, 2]
-  Flatten<[[1], [2, 3], [[4]]]> // => [1, 2, 3, [4]]
+Flatten<[]> // => []
+Flatten<[[1]]> // => [1]
+Flatten<[[1], [2]]> // => [1, 2]
+Flatten<[[1], [2, 3], [[4]]]> // => [1, 2, 3, [4]]
 ```
 
 ## InsertAt
 ```ts
-  InsertAt<'x', 0, ['a', 'b']> // => ['x', 'a', 'b']
-  InsertAt<'x', 1, ['a', 'b']> // => ['a', 'x', 'b']
-  InsertAt<'x', 2, ['a', 'b']> // => ['a', 'b', 'x']
-  InsertAt<'x', 5, ['a', 'b']> // => ['a', 'b', 'x']
+InsertAt<'x', 0, ['a', 'b']> // => ['x', 'a', 'b']
+InsertAt<'x', 1, ['a', 'b']> // => ['a', 'x', 'b']
+InsertAt<'x', 2, ['a', 'b']> // => ['a', 'b', 'x']
+InsertAt<'x', 5, ['a', 'b']> // => ['a', 'b', 'x']
 ```
 
 ## Join
 ```ts
-  Join<[], '-'> // => ''
-  Join<['a'], '-'> // => 'a'
-  Join<['a', 'b'], '-'> // => 'a-b'
+Join<[], '-'> // => ''
+Join<['a'], '-'> // => 'a'
+Join<['a', 'b'], '-'> // => 'a-b'
+```
+
+## MutableTuple
+```ts
+MutableTuple<readonly []> // => []
+MutableTuple<readonly ['a']> // => ['a']
+MutableTuple<readonly ['a', 'b']> // => ['a', 'b']
 ```
 
 ## Permutation
 ```ts
-  Permutation<[]> // => []
-  Permutation<['a']> // => ['a']
-  Permutation<['a', 'b']> // => ['a', 'b'] | ['b', 'a']
-  Permutation<['a', 'b', 'c']> // => ['a', 'b', 'c'] | ['a', 'c', 'b'] | ['b', 'a', 'c'] | ['b', 'c', 'a'] | ['c', 'a', 'b'] | ['c', 'b', 'a']
+Permutation<[]> // => []
+Permutation<['a']> // => ['a']
+Permutation<['a', 'b']> // => ['a', 'b'] | ['b', 'a']
+Permutation<['a', 'b', 'c']> // => ['a', 'b', 'c'] | ['a', 'c', 'b'] | ['b', 'a', 'c'] | ['b', 'c', 'a'] | ['c', 'a', 'b'] | ['c', 'b', 'a']
 ```
 
 ## Range
 ```ts
-  Range<3, 3> // => 3
-  Range<4, 7> // => 4 | 5 | 6 | 7
-  Range<0, 5> // => 0 | 1 | 2 | 3 | 4 | 5
+Range<3, 3> // => 3
+Range<4, 7> // => 4 | 5 | 6 | 7
+Range<0, 5> // => 0 | 1 | 2 | 3 | 4 | 5
 ```
 
 ## SubArray
 ```ts
-  SubArray<['a']> // => ['a']
-  SubArray<['a', 'b']> // => ['a'] | ['b'] | ['a', 'b']
-  SubArray<['a', 'b', 'c']> // => ['a'] | ['b'] | ['c'] | ['a', 'b'] | ['a', 'c'] | ['b', 'c'] | ['a', 'b', 'c']
+SubArray<['a']> // => ['a']
+SubArray<['a', 'b']> // => ['a'] | ['b'] | ['a', 'b']
+SubArray<['a', 'b', 'c']> // => ['a'] | ['b'] | ['c'] | ['a', 'b'] | ['a', 'c'] | ['b', 'c'] | ['a', 'b', 'c']
 ```
 
 ## Tail
@@ -102,6 +110,9 @@ You can contribute to this library in many ways, including:
 Those are just examples, any issue or pull request is welcome :)
 
 # Changelog
+
+**1.1.0 (December 01, 2021)**
+Add [MutableTuple](#mutabletuple)
 
 **1.0.0 (November 22, 2021)**
 The first release containing the 7 types:
