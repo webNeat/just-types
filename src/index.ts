@@ -1,4 +1,6 @@
+export * from './Decrement'
 export * from './Flatten'
+export * from './Increment'
 export * from './InsertAt'
 export * from './Join'
 export * from './MutableTuple'

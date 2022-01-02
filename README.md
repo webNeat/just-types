@@ -10,6 +10,8 @@ A collection of handy Typescript types.
 
 - [Installation](#installation)
 - [List of Types](#list-of-types)
+  - [Increment](#increment)
+  - [Decrement](#decrement)
   - [Flatten](#flatten)
   - [InsertAt](#insertat)
   - [Join](#join)
@@ -38,12 +40,33 @@ yarn add --dev just-types
 
 # List of Types
 
+## Increment
+```ts
+Increment<0> //=> 1
+Increment<1> //=> 2
+Increment<100> //=> 101
+Increment<101> //=> number
+Increment<-1> //=> number
+```
+**Note:** Only handles possitive integers between 0 and 100. Returns `number` for other integers.
+
+## Decrement
+```ts
+Decrement<0> //=> -1
+Decrement<1> //=> 0
+Decrement<100> //=> 99
+Decrement<101> //=> number
+Decrement<-10> //=> number
+```
+**Note:** Only handles possitive integers between 0 and 100. Returns `number` for other integers.
+
 ## Flatten
 ```ts
 Flatten<[]> // => []
 Flatten<[[1]]> // => [1]
 Flatten<[[1], [2]]> // => [1, 2]
-Flatten<[[1], [2, 3], [[4]]]> // => [1, 2, 3, [4]]
+Flatten<[[1], [[2, 3]], [[4]]]> // => [1, [2, 3], [4]]
+Flatten<[[1], [[2, 3]], [[4]]], 2> // => [1, 2, 3, 4]
 ```
 
 ## InsertAt
