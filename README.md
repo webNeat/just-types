@@ -134,10 +134,18 @@ Those are just examples, any issue or pull request is welcome :)
 
 # Changelog
 
+**1.2.0 (January 2nd 2022)**
+
+- Add [Increment](#increment)
+- Add [Decrement](#decrement)
+- Add depth parameter to [Flatten](#flatten)
+
 **1.1.0 (December 01, 2021)**
-Add [MutableTuple](#mutabletuple)
+
+- Add [MutableTuple](#mutabletuple)
 
 **1.0.0 (November 22, 2021)**
+
 The first release containing the 7 types:
   - [Flatten](#flatten)
   - [InsertAt](#insertat)
