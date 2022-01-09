@@ -165,6 +165,12 @@ Those are just examples, any issue or pull request is welcome :)
 
 # Changelog
 
+**1.3.0 (January 9th 2022)**
+
+- Add [Filter](#filter)
+- Add [FiledPath](#fieldpath)
+- Add [GetField](#getfield)
+
 **1.2.0 (January 2nd 2022)**
 
 - Add [Increment](#increment)
