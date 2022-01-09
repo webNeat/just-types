@@ -10,9 +10,12 @@ A collection of handy Typescript types.
 
 - [Installation](#installation)
 - [List of Types](#list-of-types)
-  - [Increment](#increment)
   - [Decrement](#decrement)
+  - [FieldPath](#fieldpath)
+  - [Filter](#filter)
   - [Flatten](#flatten)
+  - [GetField](#getfield)
+  - [Increment](#increment)
   - [InsertAt](#insertat)
   - [Join](#join)
   - [MutableTuple](#mutabletuple)
@@ -40,16 +43,6 @@ yarn add --dev just-types
 
 # List of Types
 
-## Increment
-```ts
-Increment<0> //=> 1
-Increment<1> //=> 2
-Increment<100> //=> 101
-Increment<101> //=> number
-Increment<-1> //=> number
-```
-**Note:** Only handles possitive integers between 0 and 100. Returns `number` for other integers.
-
 ## Decrement
 ```ts
 Decrement<0> //=> -1
@@ -60,6 +53,25 @@ Decrement<-10> //=> number
 ```
 **Note:** Only handles possitive integers between 0 and 100. Returns `number` for other integers.
 
+## FieldPath
+```ts
+FieldPath<{}> //=> ''
+FieldPath<{a: number; b: null}> //=> 'a' | 'b'
+FieldPath<{a: number; b: {c: 1; d: 2}; e: {f: {g: {}}}}
+//=> 'a' | 'b' | 'b.c' | 'b.d' | 'e' | 'e.f' | 'e.f.g'
+```
+
+## Filter
+```ts
+Filter<[1, 2, true, 3, 'foo'], number> //=> [1, 2, 3]
+Filter<[1, 2, true, 3, 'foo'], string> //=> ['foo']
+Filter<[1, 2, true, 3, 'foo'], boolean | string> //=> [true, 'foo']
+Filter<
+  [{active: true; data: 1}, {active: false; data: 2}, {active: true; data: 3}, {active: false; data: 4}],
+  {active: true}
+> //=> [{active: true; data: 1}, {active: true; data: 3}]
+```
+
 ## Flatten
 ```ts
 Flatten<[]> // => []
@@ -68,6 +80,25 @@ Flatten<[[1], [2]]> // => [1, 2]
 Flatten<[[1], [[2, 3]], [[4]]]> // => [1, [2, 3], [4]]
 Flatten<[[1], [[2, 3]], [[4]]], 2> // => [1, 2, 3, 4]
 ```
+
+## GetField
+```ts
+GetField<{a: number; b: null}, 'a'> //=> number
+GetField<{a: number; b: null}, 'b'> //=> null
+GetField<{a: number; b: {c: 1; d: 2}; e: {f: {g: number}}}, 'e.f.g'> //=> number
+GetField<{a: number; b: {c: 1; d: 2}; e: {f: {g: number}}}, 'b'> //=> {c: 1; d: 2}
+GetField<{a: number; b: {c: 1; d: 2}; e: {f: {g: number}}}, 'e.f'> //=> {g: number}
+```
+
+## Increment
+```ts
+Increment<0> //=> 1
+Increment<1> //=> 2
+Increment<100> //=> 101
+Increment<101> //=> number
+Increment<-1> //=> number
+```
+**Note:** Only handles possitive integers between 0 and 100. Returns `number` for other integers.
 
 ## InsertAt
 ```ts
