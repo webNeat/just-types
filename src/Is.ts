@@ -1,6 +1,6 @@
 export type Is<T extends true> = T
 export type Not<T extends boolean> = true extends T ? false : true
-export type Equal<X, Y> = (<T>() => T extends X ? 1 : 2) extends <T>() => T extends Y ? 1 : 2 ? true : false
+export type Equal<X, Y> = Exclude<X, Y> | Exclude<Y, X> extends never ? true : false
 export type StartsWith<Text extends string, Prefix extends string> = Text extends `${Prefix}${infer _}`
   ? true
   : false
