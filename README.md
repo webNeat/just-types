@@ -173,6 +173,10 @@ Those are just examples, any issue or pull request is welcome :)
 
 # Changelog
 
+**1.4.0 (January 29th 2022)**
+
+- Add [Split](#split)
+
 **1.3.1 (January 9th 2022)**
 
 - Export missing types
