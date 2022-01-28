@@ -21,6 +21,7 @@ A collection of handy Typescript types.
   - [MutableTuple](#mutabletuple)
   - [Permutation](#permutation)
   - [Range](#range)
+  - [Split](#split)
   - [SubArray](#subarray)
   - [Tail](#tail)
 
@@ -135,6 +136,13 @@ Permutation<['a', 'b', 'c']> // => ['a', 'b', 'c'] | ['a', 'c', 'b'] | ['b', 'a'
 Range<3, 3> // => 3
 Range<4, 7> // => 4 | 5 | 6 | 7
 Range<0, 5> // => 0 | 1 | 2 | 3 | 4 | 5
+```
+
+## Split
+```ts
+Split<'foo', '-'> // => ['foo']
+Split<'foo-bar-baz', '-'> // => ['foo', 'bar', 'baz']
+Split<'foo--', '-'> // => ['foo', '', '']
 ```
 
 ## SubArray
