@@ -173,6 +173,10 @@ Those are just examples, any issue or pull request is welcome :)
 
 # Changelog
 
+**1.4.2 (March 21th 2022)**
+
+- Add `repository` and `homepage` to `package.json` (forgot to add them on `1.4.1` :P).
+
 **1.4.1 (March 21th 2022)**
 
 - Fix issue [Tail type gives wrong results in specific recursive scenarios](https://github.com/webNeat/just-types/issues/1)

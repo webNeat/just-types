@@ -3,7 +3,9 @@
   "author": "Amine Ben hammou",
   "description": "A collection of handy Typescript types.",
   "license": "MIT",
-  "version": "1.4.1",
+  "version": "1.4.2",
+  "repository": "webNeat/just-types",
+  "homepage": "https://github.com/webNeat/just-types#just-types",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
   "files": [
