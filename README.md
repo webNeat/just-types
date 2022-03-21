@@ -173,6 +173,10 @@ Those are just examples, any issue or pull request is welcome :)
 
 # Changelog
 
+**1.4.1 (March 21th 2022)**
+
+- Fix issue [Tail type gives wrong results in specific recursive scenarios](https://github.com/webNeat/just-types/issues/1)
+
 **1.4.0 (January 29th 2022)**
 
 - Add [Split](#split)

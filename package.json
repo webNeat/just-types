@@ -3,7 +3,7 @@
   "author": "Amine Ben hammou",
   "description": "A collection of handy Typescript types.",
   "license": "MIT",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
   "files": [
