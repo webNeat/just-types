@@ -1,4 +1,4 @@
-import {Equal, Is} from './Is'
+import {Equal, Is} from './Test'
 
 export type Tail<List extends any[]> = ((...args: List) => any) extends (arg: any, ...rest: infer Rest) => any
   ? Rest

@@ -1,5 +1,5 @@
 import {InsertAt} from './InsertAt'
-import {Equal, Is} from './Is'
+import {Equal, Is} from './Test'
 
 type InsertAnywhere<
   Item,

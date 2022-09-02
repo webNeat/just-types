@@ -1,4 +1,4 @@
-import {Equal, Is} from './Is'
+import {Equal, Is} from './Test'
 
 export type Filter<List extends any[], T> = List extends [infer First, ...infer Rest]
   ? First extends T

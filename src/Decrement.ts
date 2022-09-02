@@ -1,4 +1,4 @@
-import {Equal, Is, StartsWith} from './Is'
+import {Equal, Is, StartsWith} from './Test'
 
 type IndexMinusOne = [
   -1,

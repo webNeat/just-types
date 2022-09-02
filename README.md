@@ -9,6 +9,7 @@ A collection of handy Typescript types.
 # Contents
 
 - [Installation](#installation)
+- [Testing Types](#)
 - [List of Types](#list-of-types)
   - [Decrement](#decrement)
   - [FieldPath](#fieldpath)
@@ -160,6 +161,32 @@ Tail<['a', 'b']> //=> ['b']
 Tail<['a', 'b', 'c', 'd']> //=> ['b', 'c', 'd']
 ```
 
+# Testing Your Types with just-types
+
+`just-types` allows you to test your own types using `Is`, `Equal` and other testing utils. These utils are used internally to test `just-types` types. For Example, here is the source file of the `Split` type:
+
+```ts
+import {Equal, Is} from './Test'
+
+export type Split<
+  Text extends string,
+  Separator extends string
+> = Text extends `${infer First}${Separator}${infer Rest}` ? [First, ...Split<Rest, Separator>] : [Text]
+
+type Tests = [
+  Is<Equal<Split<'foo', '-'>, ['foo']>>,
+  Is<Equal<Split<'foo-bar-baz', '-'>, ['foo', 'bar', 'baz']>>,
+  Is<Equal<Split<'foo--', '-'>, ['foo', '', '']>>
+]
+```
+
+As you see, we define the type, then we declare a `Tests` type (can be named anything) and assign a list of assertions types to it. These types are evaluated in realtime by Typescript, so we have instant feedback if something is wrong.
+
+## List of assertions
+
+- `Is<Equal<A, B>>`: asserts that types `A` and `B` are the same.
+- `Is<Not<Equal<A, B>>>`: asserts that types `A` and `B` are different.
+- `Is<StartsWith<A, B>>`, where `A` and `B` extend `string`: asserts that all elements of `A` start with with an element of `B`.
 
 # Contributing
 
@@ -172,6 +199,10 @@ You can contribute to this library in many ways, including:
 Those are just examples, any issue or pull request is welcome :)
 
 # Changelog
+
+**1.5.0 (September 2nd 2022)**
+
+- Export testing types: `Is`, `Not`, `Equal`, `StartsWith` 
 
 **1.4.2 (March 21th 2022)**
 

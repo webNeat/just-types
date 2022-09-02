@@ -1,4 +1,4 @@
-import {Equal, Is} from './Is'
+import {Equal, Is} from './Test'
 
 export type SubArray<List extends any[], ItemsBefore extends any[] = []> = List extends [
   infer Item,

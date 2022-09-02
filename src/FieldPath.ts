@@ -1,4 +1,4 @@
-import {Equal, Is} from './Is'
+import {Equal, Is} from './Test'
 
 export type FieldPath<T, IsFirst = true> = {} extends T
   ? ''
