@@ -217,10 +217,11 @@ Tail<'abcd'> //=> 'bcd'
 
 # Testing Your Types with just-types
 
-`just-types` allows you to test your own types using `Is`, `Equal` and other testing utils. These utils are used internally to test `just-types` types. For Example, here is the source file of the `Split` type:
+`just-types` uses [`expect-type`](https://github.com/mmkal/expect-type) to test types, it also exposes testing types to let you test types without using the [`expectTypeOf`](https://github.com/mmkal/expect-type#features) directly. For Example, here is the source file of the `Split` type:
 
 ```ts
-import {Equal, Is} from './Test'
+import {Equal} from 'expect-type'
+import {Is} from './Test'
 
 export type Split<
   Text extends string,
