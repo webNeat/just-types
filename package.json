@@ -3,7 +3,7 @@
   "author": "Amine Ben hammou",
   "description": "A collection of handy Typescript types.",
   "license": "MIT",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "repository": "webNeat/just-types",
   "homepage": "https://github.com/webNeat/just-types#just-types",
   "source": "src/index.ts",
@@ -20,9 +20,10 @@
     "test": "tsc"
   },
   "devDependencies": {
-    "@parcel/packager-ts": "2.7.0",
-    "@parcel/transformer-typescript-types": "2.7.0",
+    "@parcel/packager-ts": "^2.7.0",
+    "@parcel/transformer-typescript-types": "^2.7.0",
+    "expect-type": "^0.14.2",
     "parcel": "^2.7.0",
-    "typescript": "^4.8.2"
+    "typescript": "^4.8.3"
   }
 }
