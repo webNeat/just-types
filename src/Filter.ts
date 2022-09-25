@@ -1,5 +1,5 @@
 import {Equal} from 'expect-type'
-import {Is} from './Is'
+import {Is} from './Test'
 
 export type Filter<List extends any[], T> = List extends [infer First, ...infer Rest]
   ? Extract<First, T> extends never

@@ -1,5 +1,5 @@
 import {Equal} from 'expect-type'
-import {Is} from './Is'
+import {Is} from './Test'
 
 export type FilterOutProps<T, A> = {
   [key in keyof T as Exclude<T[key], A> extends never ? never : key]: Exclude<T[key], A>

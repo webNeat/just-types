@@ -1,5 +1,5 @@
 import {Equal} from 'expect-type'
-import {Is} from './Is'
+import {Is} from './Test'
 import {FieldPath} from './FieldPath'
 
 export type GetField<T, Path extends FieldPath<T>> = Path extends `${infer First}.${infer Rest}`

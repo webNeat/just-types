@@ -17,4 +17,4 @@ export * from './Split'
 export * from './SubArray'
 export * from './Tail'
 
-export * from './Is'
+export * from './Test'

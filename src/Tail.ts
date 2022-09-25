@@ -1,5 +1,5 @@
 import {Equal} from 'expect-type'
-import {Is} from './Is'
+import {Is} from './Test'
 
 type ArrayTail<List extends any[]> = ((...args: List) => any) extends (arg: any, ...rest: infer Rest) => any
   ? Rest

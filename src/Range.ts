@@ -1,5 +1,5 @@
 import {Equal} from 'expect-type'
-import {Is} from './Is'
+import {Is} from './Test'
 
 type RangeFromZero<Last extends number, Counter extends any[] = []> = Counter['length'] extends Last
   ? Last

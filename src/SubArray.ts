@@ -1,5 +1,5 @@
 import {Equal} from 'expect-type'
-import {Is} from './Is'
+import {Is} from './Test'
 
 export type SubArray<List extends any[], ItemsBefore extends any[] = []> = List extends [
   infer Item,

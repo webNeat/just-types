@@ -1,5 +1,5 @@
 import {Equal} from 'expect-type'
-import {Is} from './Is'
+import {Is} from './Test'
 
 export type FieldPath<T, IsFirst = true> = {} extends T
   ? ''

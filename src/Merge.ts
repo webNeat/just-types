@@ -1,5 +1,5 @@
 import {Equal} from 'expect-type'
-import {Is} from './Is'
+import {Is} from './Test'
 import {Decrement} from './Decrement'
 
 export type Merge<A, B, Level extends number = 1> = [A, B] extends [Record<string, any>, Record<string, any>]
