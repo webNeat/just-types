@@ -1,4 +1,5 @@
-import {Equal, Is} from './Test'
+import {Equal} from 'expect-type'
+import {Is} from './Is'
 import {Decrement} from './Decrement'
 
 export type Flatten<List, Depth extends number = 1> = Depth extends 0

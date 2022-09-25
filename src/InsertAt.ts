@@ -1,4 +1,5 @@
-import {Equal, Is} from './Test'
+import {Is} from './Is'
+import {Equal} from 'expect-type'
 
 export type InsertAt<
   Item,

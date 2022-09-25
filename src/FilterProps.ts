@@ -1,4 +1,5 @@
-import {Equal, Is} from './Test'
+import {Equal} from 'expect-type'
+import {Is} from './Is'
 
 export type FilterProps<T, A> = {
   [key in keyof T as Extract<T[key], A> extends never ? never : key]: Extract<T[key], A>

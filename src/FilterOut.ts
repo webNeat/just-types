@@ -1,4 +1,5 @@
-import {Equal, Is} from './Test'
+import {Equal} from 'expect-type'
+import {Is} from './Is'
 
 export type FilterOut<List extends any[], T> = List extends [infer First, ...infer Rest]
   ? Exclude<First, T> extends never

@@ -1,4 +1,5 @@
-import {Equal, Is} from './Test'
+import {Equal} from 'expect-type'
+import {Is} from './Is'
 
 export type MutableTuple<A extends readonly any[]> = A extends readonly []
   ? []

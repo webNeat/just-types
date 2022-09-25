@@ -1,5 +1,6 @@
+import {Equal} from 'expect-type'
+import {Is} from './Is'
 import {InsertAt} from './InsertAt'
-import {Equal, Is} from './Test'
 
 type InsertAnywhere<
   Item,

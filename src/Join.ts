@@ -1,4 +1,5 @@
-import {Equal, Is} from './Test'
+import {Equal} from 'expect-type'
+import {Is} from './Is'
 import {Literal} from './Literal'
 
 export type Join<List extends Literal[], Separator extends Literal> = List extends []

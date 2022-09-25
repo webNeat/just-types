@@ -1,4 +1,5 @@
-import {Equal, Is, StartsWith} from './Test'
+import {Equal} from 'expect-type'
+import {Is} from './Is'
 
 type IndexPlusOne = [
   1,
@@ -104,7 +105,7 @@ type IndexPlusOne = [
   101
 ]
 
-export type Increment<N extends number> = StartsWith<`${N}`, '-'> extends true
+export type Increment<N extends number> = `${N}` extends `-${string}`
   ? number
   : IndexPlusOne[N] extends number
   ? IndexPlusOne[N]
