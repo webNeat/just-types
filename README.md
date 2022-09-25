@@ -80,7 +80,7 @@ Filter<
 > //=> [{active: true; data: 1}, {active: true; data: 3}]
 ```
 
-# FilterProps
+## FilterProps
 ```ts
 FilterProps<{}, number> //=> {}
 FilterProps<{a: string}, number> //=> {}
@@ -102,7 +102,7 @@ FilterOut<
 > //=> [{active: true; data: 1}, {active: true; data: 3}]
 ```
 
-# FilterOutProps
+## FilterOutProps
 ```ts
 FilterOutProps<{}, number> //=> {}
 FilterOutProps<{a: number}, number> //=> {}
@@ -154,7 +154,7 @@ Join<['a'], '-'> // => 'a'
 Join<['a', 'b'], '-'> // => 'a-b'
 ```
 
-# Merge
+## Merge
 ```ts
 Merge<{}, {a: number; c: null}> //=> {a: number; c: null}
 Merge<{a: number; c: null}, {}> //=> {a: number; c: null}
@@ -255,7 +255,7 @@ Those are just examples, any issue or pull request is welcome :)
 
 # Changelog
 
-**1.6.0 (Sptember 24th 2022)**
+**1.6.0 (Sptember 25th 2022)**
 
 - Add `FilterOut`, `FilterProps`, `FilterOutProps` and `Merge`.
 - Add assertion type `Extends`.
