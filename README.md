@@ -14,11 +14,15 @@ A collection of handy Typescript types.
   - [Decrement](#decrement)
   - [FieldPath](#fieldpath)
   - [Filter](#filter)
+  - [FilterProps](#filterprops)
+  - [FilterOut](#filterout)
+  - [FilterOutProps](#filteroutprops)
   - [Flatten](#flatten)
   - [GetField](#getfield)
   - [Increment](#increment)
   - [InsertAt](#insertat)
   - [Join](#join)
+  - [Merge](#merge)
   - [MutableTuple](#mutabletuple)
   - [Permutation](#permutation)
   - [Range](#range)
@@ -67,11 +71,44 @@ FieldPath<{a: number; b: {c: 1; d: 2}; e: {f: {g: {}}}}
 ```ts
 Filter<[1, 2, true, 3, 'foo'], number> //=> [1, 2, 3]
 Filter<[1, 2, true, 3, 'foo'], string> //=> ['foo']
+Filter<[1 | 'hello', 2 | 'world', true, 3, 'foo'], number> //=> [1, 2, 3]
+Filter<[1 | 'hello', 2 | 'world', true, 3, 'foo'], string> //=> ['hello', 'world', 'foo']
 Filter<[1, 2, true, 3, 'foo'], boolean | string> //=> [true, 'foo']
 Filter<
   [{active: true; data: 1}, {active: false; data: 2}, {active: true; data: 3}, {active: false; data: 4}],
   {active: true}
 > //=> [{active: true; data: 1}, {active: true; data: 3}]
+```
+
+# FilterProps
+```ts
+FilterProps<{}, number> //=> {}
+FilterProps<{a: string}, number> //=> {}
+FilterProps<{a: number}, number> //=> {a: number}
+FilterProps<{a?: number}, number> //=> {a?: number}
+FilterProps<{a: string; b: number; c: true}, string | boolean> //=> {a: string; c: true}
+FilterProps<{a: string; b: number; c?: true}, string | boolean> //=> {a: string; c?: true}
+FilterProps<{a: string; b?: number; c: true}, string | undefined> //=> {a: string; b?: undefined}
+```
+
+## FilterOut
+```ts
+FilterOut<[1, 2, true, 3, 'foo'], number> //=> [true, 'foo']
+FilterOut<[1, 2, true, 3, 'foo'], string> //=> [1, 2, true, 3]
+FilterOut<[1, 2, true, 3, 'foo'], boolean | string> //=> [1, 2, 3]
+FilterOut<
+  [{active: true; data: 1}, {active: false; data: 2}, {active: true; data: 3}, {active: false; data: 4}],
+  {active: false}
+> //=> [{active: true; data: 1}, {active: true; data: 3}]
+```
+
+# FilterOutProps
+```ts
+FilterOutProps<{}, number> //=> {}
+FilterOutProps<{a: number}, number> //=> {}
+FilterOutProps<{a: number}, string> //=> {a: number}
+FilterOutProps<{a?: number}, number> //=> {a?: undefined}
+FilterOutProps<{a: string | number; b?: string}, number> //=> {a: string; b?: string}
 ```
 
 ## Flatten
@@ -117,6 +154,18 @@ Join<['a'], '-'> // => 'a'
 Join<['a', 'b'], '-'> // => 'a-b'
 ```
 
+# Merge
+```ts
+Merge<{}, {a: number; c: null}> //=> {a: number; c: null}
+Merge<{a: number; c: null}, {}> //=> {a: number; c: null}
+Merge<{a: number; c: null}, {b: string}> //=> {a: number; b: string; c: null}
+Merge<{a: number; c: null}, {a: string}> //=> {a: string; c: null}
+// It only merges only level by default
+Merge<{a: {b: string}}, {a: {c: number}}> //=> {a: {c: number}},
+// But you can set the level as 3rd argument
+Merge<{a: {b: string}}, {a: {c: number}}, 2> //=> {a: {b: string, c: number}}
+```
+
 ## MutableTuple
 ```ts
 MutableTuple<readonly []> // => []
@@ -155,10 +204,15 @@ SubArray<['a', 'b', 'c']> // => ['a'] | ['b'] | ['c'] | ['a', 'b'] | ['a', 'c'] 
 
 ## Tail
 ```ts
+// Works with Arrays
 Tail<[]> //=> []
 Tail<['a']> //=> []
 Tail<['a', 'b']> //=> ['b']
 Tail<['a', 'b', 'c', 'd']> //=> ['b', 'c', 'd']
+// and strings
+Tail<''> //=> ''
+Tail<'a'> //=> ''
+Tail<'abcd'> //=> 'bcd'
 ```
 
 # Testing Your Types with just-types
@@ -187,6 +241,7 @@ As you see, we define the type, then we declare a `Tests` type (can be named any
 - `Is<Equal<A, B>>`: asserts that types `A` and `B` are the same.
 - `Is<Not<Equal<A, B>>>`: asserts that types `A` and `B` are different.
 - `Is<StartsWith<A, B>>`, where `A` and `B` extend `string`: asserts that all elements of `A` start with with an element of `B`.
+- `Is<Extends<A, B>>`: asserts that type `A` extends type `B`
 
 # Contributing
 
@@ -199,6 +254,13 @@ You can contribute to this library in many ways, including:
 Those are just examples, any issue or pull request is welcome :)
 
 # Changelog
+
+**1.6.0 (Sptember 24th 2022)**
+
+- Add `FilterOut`, `FilterProps`, `FilterOutProps` and `Merge`.
+- Add assertion type `Extends`.
+- Improve `Tail` to support `string` types.
+- Fix `Filter` to correctly handle union types.
 
 **1.5.0 (September 2nd 2022)**
 
