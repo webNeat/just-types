@@ -3,27 +3,40 @@
   "author": "Amine Ben hammou",
   "description": "A collection of handy Typescript types.",
   "license": "MIT",
-  "version": "1.6.0",
+  "version": "2.0.0-alpha.1",
   "repository": "webNeat/just-types",
   "homepage": "https://github.com/webNeat/just-types#just-types",
-  "source": "src/index.ts",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist/index.d.ts",
-    "dist/index.d.ts.map"
+    "dist"
   ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./common": "./dist/common/index.js",
+    "./number": "./dist/number/index.js",
+    "./object": "./dist/object/index.js",
+    "./string": "./dist/string/index.js",
+    "./test": "./dist/test.js",
+    "./tuple": "./dist/tuple/index.js"
+  },  
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "build": "parcel build",
-    "test": "tsc"
+    "test": "tsc --noEmit",
+    "build:ts": "rm -rf dist && tsc",
+    "build:docs": "ts-node-esm build.mts",
+    "build": "yarn build:ts && yarn build:docs"
   },
   "devDependencies": {
-    "@parcel/packager-ts": "^2.7.0",
-    "@parcel/transformer-typescript-types": "^2.7.0",
-    "expect-type": "^0.14.2",
-    "parcel": "^2.7.0",
-    "typescript": "^4.8.3"
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^18.15.11",
+    "expect-type": "^0.15.0",
+    "fs-extra": "^11.1.1",
+    "prettier": "^2.8.7",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.3"
   }
 }

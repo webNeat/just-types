@@ -1,14 +1,14 @@
-import {Equal} from 'expect-type'
-import {Is} from './Test'
-import {Decrement} from './Decrement'
+import {Is, Equal} from '../test'
+import {Decrement} from '../number'
+import { ZeroTo10 } from '../constants'
 
-export type Merge<A, B, Level extends number = 1> = [A, B] extends [Record<string, any>, Record<string, any>]
-  ? Level extends 1
+export type Merge<A, B, Depth extends ZeroTo10 = 1> = [A, B] extends [Record<string, any>, Record<string, any>]
+  ? Depth extends 1
     ? Pick<A, Exclude<keyof A, keyof B>> & B
-    : Pick<A, Exclude<keyof A, keyof B>> &
-        Pick<B, Exclude<keyof B, keyof A>> & {
-          [key in keyof A & keyof B]: Merge<A[key], B[key], Decrement<Level>>
-        }
+    : Pick<A, Exclude<keyof A, keyof B>> & Pick<B, Exclude<keyof B, keyof A>> & {
+        // @ts-ignore
+        [key in keyof A & keyof B]: Merge<A[key], B[key], Decrement<Depth>>
+      }
   : B
 
 type Tests = [

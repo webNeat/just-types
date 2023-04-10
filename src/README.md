@@ -30,38 +30,7 @@ yarn add --dev just-types
 
 # Types Reference
 
-- [common](https://github.com/webNeat/just-types/blob/main/docs/common.md)
-  - [Mutable](https://github.com/webNeat/just-types/blob/main/docs/common.md#mutable)
-
-- [number](https://github.com/webNeat/just-types/blob/main/docs/number.md)
-  - [Decrement](https://github.com/webNeat/just-types/blob/main/docs/number.md#decrement)
-  - [Increment](https://github.com/webNeat/just-types/blob/main/docs/number.md#increment)
-  - [Range](https://github.com/webNeat/just-types/blob/main/docs/number.md#range)
-
-- [object](https://github.com/webNeat/just-types/blob/main/docs/object.md)
-  - [ExcludeKeys](https://github.com/webNeat/just-types/blob/main/docs/object.md#excludekeys)
-  - [ExcludeValues](https://github.com/webNeat/just-types/blob/main/docs/object.md#excludevalues)
-  - [ExtractKeys](https://github.com/webNeat/just-types/blob/main/docs/object.md#extractkeys)
-  - [ExtractValues](https://github.com/webNeat/just-types/blob/main/docs/object.md#extractvalues)
-  - [FieldPath](https://github.com/webNeat/just-types/blob/main/docs/object.md#fieldpath)
-  - [GetField](https://github.com/webNeat/just-types/blob/main/docs/object.md#getfield)
-  - [Merge](https://github.com/webNeat/just-types/blob/main/docs/object.md#merge)
-
-- [string](https://github.com/webNeat/just-types/blob/main/docs/string.md)
-  - [Split](https://github.com/webNeat/just-types/blob/main/docs/string.md#split)
-  - [Tail](https://github.com/webNeat/just-types/blob/main/docs/string.md#tail)
-
-- [tuple](https://github.com/webNeat/just-types/blob/main/docs/tuple.md)
-  - [Exclude](https://github.com/webNeat/just-types/blob/main/docs/tuple.md#exclude)
-  - [Extract](https://github.com/webNeat/just-types/blob/main/docs/tuple.md#extract)
-  - [Flatten](https://github.com/webNeat/just-types/blob/main/docs/tuple.md#flatten)
-  - [Insert](https://github.com/webNeat/just-types/blob/main/docs/tuple.md#insert)
-  - [Join](https://github.com/webNeat/just-types/blob/main/docs/tuple.md#join)
-  - [Permutation](https://github.com/webNeat/just-types/blob/main/docs/tuple.md#permutation)
-  - [Slice](https://github.com/webNeat/just-types/blob/main/docs/tuple.md#slice)
-  - [SubArray](https://github.com/webNeat/just-types/blob/main/docs/tuple.md#subarray)
-  - [SubSequence](https://github.com/webNeat/just-types/blob/main/docs/tuple.md#subsequence)
-  - [Tail](https://github.com/webNeat/just-types/blob/main/docs/tuple.md#tail)
+{{types-reference}}
 
 # Testing Your Types with just-types
 

@@ -1,11 +1,12 @@
 {
   "include": ["src", "types"],
   "compilerOptions": {
-    "module": "ESNext",
-    "lib": ["esnext"],
+    "module": "NodeNext",
+    "lib": ["esnext", "DOM"],
+    "moduleResolution": "nodenext",
     "rootDir": "./src",
+    "outDir": "./dist",
     "sourceMap": true,
-    "noEmit": true,
     "importHelpers": true,
     "declaration": true,
     "strict": true,
@@ -13,7 +14,6 @@
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": false,
     "noUnusedParameters": true,
-    "moduleResolution": "node",
     "jsx": "react",
     "esModuleInterop": true,
     "skipLibCheck": true,
