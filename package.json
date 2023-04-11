@@ -21,7 +21,7 @@
     "./tuple": "./dist/tuple/index.js"
   },  
   "engines": {
-    "node": ">=10"
+    "node": ">=16"
   },
   "scripts": {
     "test": "tsc --noEmit",
