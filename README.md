@@ -3,7 +3,7 @@
 A collection of handy Typescript types.
 
 [![Version](https://img.shields.io/npm/v/just-types?style=flat-square)](https://www.npmjs.com/package/just-types)
-[![Tests Status](https://img.shields.io/github/actions/workflow/status/webneat/just-types/tests.yml?branch=main&style=flat-square)](https://github.com/webneat/just-types/actions?query=workflow:"Tests")
+[![Tests Status](https://img.shields.io/github/workflow/status/webneat/just-types/Tests?style=flat-square)](https://github.com/webneat/just-types/actions?query=workflow:"Tests")
 [![MIT](https://img.shields.io/npm/l/just-types?style=flat-square)](LICENSE)
 
 # Contents

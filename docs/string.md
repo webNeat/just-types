@@ -11,16 +11,11 @@
 ```ts
 import {Split} from 'just-types/string'
 // or
-import {string} from 'just-types'
-// use string.Split
-```
+import {string} from 'just-types' // and use string.Split
 
-```ts
-import {Split} from 'just-types/string'
-
-Split<'foo', '-'> //=>  ['foo']
-Split<'foo-bar-baz', '-'> //=>  ['foo', 'bar', 'baz']
-Split<'foo--', '-'> //=>  ['foo', '', '']
+Split<'foo', '-'> //=> ['foo']
+Split<'foo-bar-baz', '-'> //=> ['foo', 'bar', 'baz']
+Split<'foo--', '-'> //=> ['foo', '', '']
 ```
 
 ## Tail
@@ -29,14 +24,9 @@ Split<'foo--', '-'> //=>  ['foo', '', '']
 ```ts
 import {Tail} from 'just-types/string'
 // or
-import {string} from 'just-types'
-// use string.Tail
-```
+import {string} from 'just-types' // and use string.Tail
 
-```ts
-import {Tail} from 'just-types/string'
-
-Tail<''> //=>  ''
-Tail<'a'> //=>  ''
-Tail<'abcd'> //=>  'bcd'
+Tail<''> //=> ''
+Tail<'a'> //=> ''
+Tail<'abcd'> //=> 'bcd'
 ```

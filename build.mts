@@ -59,12 +59,8 @@ function generateTypeDocs(mod: string, {name, description, tests}: Type) {
     "```ts",
     `import {${name}} from 'just-types/${mod}'`,
     `// or`,
-    `import {${mod}} from 'just-types'`,
-    `// use ${mod}.${name}`,
-    "```\n",
-    "```ts",
-    `import {${name}} from 'just-types/${mod}'\n`,
-    ... tests.map(x => `${x.expression} //=> ${x.value}`),
+    `import {${mod}} from 'just-types' // and use ${mod}.${name}\n`,
+    ... tests.map(x => `${x.expression} //=> ${commentAdditionalLines(x.value)}`),
     "```",
   ].join(`\n`)
 }
@@ -139,8 +135,23 @@ function extractTests(node: ts.TupleTypeNode) {
   return node.elements.map(e => {
     const children = e.getChildAt(2).getChildAt(0).getChildAt(2).getChildren()
     return {
-      expression: children[0].getFullText(),
-      value: children[2].getFullText()
+      expression: unindentCode(children[0].getFullText()),
+      value: unindentCode(children[2].getFullText())
     }
   })
+}
+
+function unindentCode(text: string) {
+  while(text[0] === `\n`) text = text.slice(1)
+  let i = 0
+  while (i < text.length && text.charAt(i) === ' ') i ++
+  const spaces = i
+  return text.split(`\n`).map(line => {
+    if (line.slice(0, spaces).trim() === '') return line.slice(spaces)
+    return line.trimStart()
+  }).join(`\n`)
+}
+
+function commentAdditionalLines(text: string) {
+  return text.split(`\n`).map(line => `// ${line}`).join(`\n`).slice(3)
 }
