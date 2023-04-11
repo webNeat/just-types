@@ -7,7 +7,6 @@
 
 ## Split
 
-**Import**
 ```ts
 import {Split} from 'just-types/string'
 // or
@@ -20,7 +19,6 @@ Split<'foo--', '-'> //=> ['foo', '', '']
 
 ## Tail
 
-**Import**
 ```ts
 import {Tail} from 'just-types/string'
 // or

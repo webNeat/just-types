@@ -1,6 +1,6 @@
 import {Equal, Is} from '../test'
 
-export type Tail<T extends any[]> = T extends [infer _, ...infer X] ? X : []
+export type Tail<T extends any[]> = ((...args: T) => any) extends ((arg: any, ...rest: infer Rest) => any) ? Rest : []
 
 type Tests = [
   Is<Equal<Tail<[]>, []>>,

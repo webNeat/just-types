@@ -55,7 +55,6 @@ function generateTypeDocs(mod: string, {name, description, tests}: Type) {
   return [
     `## ${name}`,
     description,
-    `**Import**`,
     "```ts",
     `import {${name}} from 'just-types/${mod}'`,
     `// or`,

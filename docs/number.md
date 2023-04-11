@@ -8,7 +8,6 @@
 
 ## Decrement
 
-**Import**
 ```ts
 import {Decrement} from 'just-types/number'
 // or
@@ -24,7 +23,6 @@ Decrement<-100> //=> -101
 
 ## Increment
 
-**Import**
 ```ts
 import {Increment} from 'just-types/number'
 // or
@@ -39,7 +37,6 @@ Increment<-100> //=> -99
 
 ## Range
 
-**Import**
 ```ts
 import {Range} from 'just-types/number'
 // or

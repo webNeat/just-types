@@ -6,7 +6,6 @@
 
 ## Mutable
 
-**Import**
 ```ts
 import {Mutable} from 'just-types/common'
 // or

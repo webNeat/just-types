@@ -12,7 +12,6 @@
 
 ## ExcludeKeys
 
-**Import**
 ```ts
 import {ExcludeKeys} from 'just-types/object'
 // or
@@ -27,7 +26,6 @@ ExcludeKeys<{hi: string, foo: string, hello: number, bar: boolean}, 'a' | 'foo' 
 
 ## ExcludeValues
 
-**Import**
 ```ts
 import {ExcludeValues} from 'just-types/object'
 // or
@@ -41,7 +39,6 @@ ExcludeValues<{a: string, b: number}, number | boolean> //=> {a: string}
 
 ## ExtractKeys
 
-**Import**
 ```ts
 import {ExtractKeys} from 'just-types/object'
 // or
@@ -56,7 +53,6 @@ ExtractKeys<{hi: string, foo: string, hello: number, bar: boolean}, 'a' | 'foo' 
 
 ## ExtractValues
 
-**Import**
 ```ts
 import {ExtractValues} from 'just-types/object'
 // or
@@ -70,7 +66,6 @@ ExtractValues<{a: string, b: number}, any> //=> {a: string, b: number}
 
 ## FieldPath
 
-**Import**
 ```ts
 import {FieldPath} from 'just-types/object'
 // or
@@ -83,7 +78,6 @@ FieldPath<{a: number; b: {c: 1; d: 2}; e: {f: {g: {}}}}> //=> ['a'] | ['b'] | ['
 
 ## GetField
 
-**Import**
 ```ts
 import {GetField} from 'just-types/object'
 // or
@@ -98,7 +92,6 @@ GetField<{a: number; b: {c: 1; d: 2}; e: {f: {g: number}}}, ['e', 'f']> //=> {g:
 
 ## Merge
 
-**Import**
 ```ts
 import {Merge} from 'just-types/object'
 // or

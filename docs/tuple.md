@@ -15,7 +15,6 @@
 
 ## Exclude
 
-**Import**
 ```ts
 import {Exclude} from 'just-types/tuple'
 // or
@@ -31,7 +30,6 @@ TupleExclude<[1 | 'foo', 2, false, 'hi', 3 | 'hello', true], number|boolean> //=
 
 ## Extract
 
-**Import**
 ```ts
 import {Extract} from 'just-types/tuple'
 // or
@@ -47,7 +45,6 @@ TupleExtract<[1 | 'foo', 2, false, 'hi', 3 | 'hello', true], number|string> //=>
 
 ## Flatten
 
-**Import**
 ```ts
 import {Flatten} from 'just-types/tuple'
 // or
@@ -63,7 +60,6 @@ Flatten<[[1], [[2, 3]], [[4]]], 5> //=> [1, 2, 3, 4]
 
 ## Insert
 
-**Import**
 ```ts
 import {Insert} from 'just-types/tuple'
 // or
@@ -77,7 +73,6 @@ Insert<['a', 'b'], 'x', 0 | 2> //=> ['x', 'a', 'b'] | ['a', 'b', 'x']
 
 ## Join
 
-**Import**
 ```ts
 import {Join} from 'just-types/tuple'
 // or
@@ -90,7 +85,6 @@ Join<['a', 'b'], '-'> //=> 'a-b'
 
 ## Permutation
 
-**Import**
 ```ts
 import {Permutation} from 'just-types/tuple'
 // or
@@ -104,7 +98,6 @@ Permutation<['a', 'b', 'c']> //=> ['a', 'b', 'c'] | ['a', 'c', 'b'] | ['b', 'a',
 
 ## Slice
 
-**Import**
 ```ts
 import {Slice} from 'just-types/tuple'
 // or
@@ -119,7 +112,6 @@ Slice<['a', 'b', 'c', 'd'], 2, 99> //=> ['c', 'd']
 
 ## SubArray
 
-**Import**
 ```ts
 import {SubArray} from 'just-types/tuple'
 // or
@@ -132,7 +124,6 @@ SubArray<['a', 'b', 'c']> //=> [] | ['a'] | ['b'] | ['c'] | ['a', 'b'] | ['b', '
 
 ## SubSequence
 
-**Import**
 ```ts
 import {SubSequence} from 'just-types/tuple'
 // or
@@ -145,7 +136,6 @@ SubSequence<['a', 'b', 'c']> //=> [] | ['a'] | ['b'] | ['c'] | ['a', 'b'] | ['a'
 
 ## Tail
 
-**Import**
 ```ts
 import {Tail} from 'just-types/tuple'
 // or
