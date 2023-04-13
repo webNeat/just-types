@@ -9,6 +9,10 @@
 - [FieldPath](#fieldpath)
 - [GetField](#getfield)
 - [Merge](#merge)
+- [PartialKeys](#partialkeys)
+- [PartialValues](#partialvalues)
+- [RequiredKeys](#requiredkeys)
+- [RequiredValues](#requiredvalues)
 
 ## ExcludeKeys
 
@@ -114,4 +118,52 @@ Merge<
 //   a: {foo: number; bar: {baz: bigint}}
 //   c: {c1: number; c2: number; d: {e: {f: null; h: number}; g: null}}
 // }
+```
+
+## PartialKeys
+
+```ts
+import {PartialKeys} from 'just-types/object'
+// or
+import {object} from 'just-types' // and use object.PartialKeys
+
+PartialKeys<{a: string, b: number, c: boolean}, 'a' | 'c'> //=> {a?: string, b: number, c?: boolean}
+PartialKeys<{a: string, b: number, c: boolean}, string> //=> {a?: string, b?: number, c?: boolean}
+PartialKeys<{a?: string, b?: number, c: boolean}, 'a' | 'd'> //=> {a?: string, b?: number, c: boolean}
+```
+
+## PartialValues
+
+```ts
+import {PartialValues} from 'just-types/object'
+// or
+import {object} from 'just-types' // and use object.PartialValues
+
+PartialValues<{a: string, b: number, c: boolean}, string | boolean> //=> {a?: string, b: number, c?: boolean}
+PartialValues<{a: 'Hello', b: string, c: boolean}, string> //=> {a?: 'Hello', b?: string, c: boolean}
+PartialValues<{a?: string, b?: number, c: boolean}, string> //=> {a?: string, b?: number, c: boolean}
+```
+
+## RequiredKeys
+
+```ts
+import {RequiredKeys} from 'just-types/object'
+// or
+import {object} from 'just-types' // and use object.RequiredKeys
+
+RequiredKeys<{a?: string, b?: number, c: boolean}, 'a' | 'c'> //=> {a: string, b?: number, c: boolean}
+RequiredKeys<{a?: string, b?: number, c: boolean}, string> //=> {a: string, b: number, c: boolean}
+RequiredKeys<{a?: string, b?: number, c: boolean}, 'a' | 'd'> //=> {a: string, b?: number, c: boolean}
+```
+
+## RequiredValues
+
+```ts
+import {RequiredValues} from 'just-types/object'
+// or
+import {object} from 'just-types' // and use object.RequiredValues
+
+RequiredValues<{a?: string, b?: number, c?: boolean}, string | boolean> //=> {a: string, b?: number, c: boolean}
+RequiredValues<{a?: 'Hello', b?: string, c?: boolean}, string> //=> {a: 'Hello', b: string, c?: boolean}
+RequiredValues<{a: string, b: number, c?: boolean}, string> //=> {a: string, b: number, c?: boolean}
 ```

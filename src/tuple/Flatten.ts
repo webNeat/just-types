@@ -6,7 +6,7 @@ export type Flatten<T extends any[], Depth extends ZeroTo100 = 1> =
   [Depth, T] extends [0, any] | [any, []] ? T :
   T extends [infer Head, ...infer Tail] 
     ? Head extends any[]
-      // @ts-expect-error
+      // @ts-ignore
       ? [...Flatten<Head, Decrement<Depth>>, ...Flatten<Tail, Depth>]
       : [Head, ...Flatten<Tail, Depth>]
     : T
