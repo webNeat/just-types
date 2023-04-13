@@ -70,11 +70,26 @@ You can contribute to this library in many ways, including:
 
 - **Reporting bugs**: Simply open an issue and describe the bug. Please include a code snippet to reproduce the bug, it really helps to solve the problem quickly.
 
-- **Suggesting new types**: If you have a common use case that you think worth having its own custom type, open an issue and we will discuss it. Do you already have an implementation for it? great, make a pull request and I will review it. Please make sure your code is consistent with the rest of the codebase and use [Prettier](https://prettier.io/) and [EditorConfig](https://editorconfig.org/) to format your files.
+- **Suggesting new types**: If you have a common use case that you think worth having its own custom type, open an issue and we will discuss it. Do you already have an implementation for it? great, make a pull request and I will review it.
 
 Those are just examples, any issue or pull request is welcome :)
 
 # Changelog
+
+**2.0.0-alpha.2 (April 13th 2023)**
+
+- Add types:
+  - In `common` module: `Normalize`
+  - In `object` module: `PartialKeys`, `PartialValues`, `RequiredKeys` and `RequiredValues`
+
+**2.0.0-alpha.1 (April 11th 2023)**
+
+- Full rewrite of the library.
+- Rewrite some types to use less recursion and be more efficient.
+- Separate types into modules: `tuple`, `string`, `object`, ...
+- Generate docs directly from source code.
+- Drop Parcel and use `tsc` instead.
+- Rename some types for better naming convention `FilterOut => tuple.Exclude`, `FilterProps => object.ExtractValues`, `FilterPropsOut => object.ExcludeValues`, ...
 
 **1.6.0 (Sptember 24th 2022)**
 
