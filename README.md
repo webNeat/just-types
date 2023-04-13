@@ -32,6 +32,7 @@ yarn add --dev just-types
 
 - [common](https://github.com/webNeat/just-types/blob/main/docs/common.md)
   - [Mutable](https://github.com/webNeat/just-types/blob/main/docs/common.md#mutable)
+  - [Normalize](https://github.com/webNeat/just-types/blob/main/docs/common.md#normalize)
 
 - [number](https://github.com/webNeat/just-types/blob/main/docs/number.md)
   - [Decrement](https://github.com/webNeat/just-types/blob/main/docs/number.md#decrement)
@@ -46,6 +47,10 @@ yarn add --dev just-types
   - [FieldPath](https://github.com/webNeat/just-types/blob/main/docs/object.md#fieldpath)
   - [GetField](https://github.com/webNeat/just-types/blob/main/docs/object.md#getfield)
   - [Merge](https://github.com/webNeat/just-types/blob/main/docs/object.md#merge)
+  - [PartialKeys](https://github.com/webNeat/just-types/blob/main/docs/object.md#partialkeys)
+  - [PartialValues](https://github.com/webNeat/just-types/blob/main/docs/object.md#partialvalues)
+  - [RequiredKeys](https://github.com/webNeat/just-types/blob/main/docs/object.md#requiredkeys)
+  - [RequiredValues](https://github.com/webNeat/just-types/blob/main/docs/object.md#requiredvalues)
 
 - [string](https://github.com/webNeat/just-types/blob/main/docs/string.md)
   - [Split](https://github.com/webNeat/just-types/blob/main/docs/string.md#split)
