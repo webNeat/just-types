@@ -3,7 +3,7 @@
   "author": "Amine Ben hammou",
   "description": "A collection of handy Typescript types.",
   "license": "MIT",
-  "version": "2.0.0-alpha.2",
+  "version": "2.0.0-alpha.3",
   "repository": "webNeat/just-types",
   "homepage": "https://github.com/webNeat/just-types#just-types",
   "main": "dist/index.js",
@@ -29,12 +29,14 @@
     "build:docs": "ts-node-esm build.mts",
     "build": "yarn build:ts && yarn build:docs"
   },
-  "dependencies": {
+  "peerDependencies": {
     "tslib": "^2.5.0",
-    "@types/node": "^18.15.11",
     "typescript": "^5.0.3"
   },
   "devDependencies": {
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.3",
+    "@types/node": "^18.15.11",
     "@types/fs-extra": "^11.0.1",
     "expect-type": "^0.15.0",
     "fs-extra": "^11.1.1",
